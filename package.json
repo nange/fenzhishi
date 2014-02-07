@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node app.js"
-  },
+  }, 
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-connect": "~0.5.0",
