@@ -4,18 +4,21 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     less: {
   	  development: {
+        options: {
+          paths: ["less"]
+        },
   	    files: {
-  	      "public/css/style.css": "less/style.less"
+  	      "public/css/common.css": "less/common.less",
+          "public/css/pages.css": "less/pages.less"
   	    }
   	  }
     },
     connect: {
       server: {
-          options: {
-            base: 'mockup',
-            port: 9000,
-            keepalive: true
-          }
+        options: {
+          base: 'mockup',
+          port: 9000,
+          keepalive: true
         }
       }
     }
