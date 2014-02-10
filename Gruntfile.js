@@ -16,7 +16,8 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          base: 'mockup',
+          hostname: '0.0.0.0',
+          //base: 'mockup',
           port: 9000,
           keepalive: true
         }
