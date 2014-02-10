@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css">
 
+	<link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" href="css/common.css">
 
 	<script type="text/javascript" src="vendor/jquery/jquery-2.1.0.js"></script>
@@ -17,9 +19,9 @@
 	<![endif]-->
 </head>
 <body>
-	<div class="container container-white">
-			<nav class="navbar" role="navigation">
-				<div class="container-fluid">
+	<div class="container-fluid top-header">
+	<header class="container">
+<div class="navbar" role="navigation">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -30,7 +32,6 @@
 						</button>
 						<a class="navbar-brand" href="#"><img src="image/logo.png"/></a>
 					</div>
-
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="navbar-collapse-1">
 						<ul class="nav navbar-nav">
@@ -52,7 +53,7 @@
 							<button type="submit" class="btn btn-default">搜索</button>
 						</form>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">注册</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#LoginModal">登录</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Weibin <b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -64,25 +65,27 @@
 							</li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
-			</nav>
-	</div>
-	
-	<div class="container-fluid container-fluid-top fixed">
+			</div>
+			</header>
+	</div><!-- /.container-->
+	<div class="container-fluid color-header" id="color-header">
           <div class="container">
-            <div class="col-md-6 pagetitle">
-              <a href="/" aria-hidden="true" class="glyph-logo logo-mark" title="Home"></a>
-              <h1><a href="/">着陆页面</a></h1>
+            <div class="col-md-8 pagetitle">
+              <a href="/" id="color-header-logo" class="navbar-brand" title="首页"><img src="image/logo-white.png"/></a>
+              <a href="#"><img src="image/color-header-bread.png"/></a><!--css background-->
+              <h1><a href="/">因为欣赏，所以分享。（此处为页面主标题）</a></h1>
+              <!--<a href="#">收藏笔记</a>-->
             </div>
             
-              <div class="actions stream-actions">
-                <a href="/" aria-hidden="true" class="map glyph-world-america glyph" data-container="body" data-toggle="tooltip" title="" data-original-title="Map"></a>
+              <div class="actions">
+                <a href="/" aria-hidden="true" class="" data-container="body" data-toggle="tooltip" title=""></a>
                 
               </div>
             
           </div>
         </div>
 <div class="container">
+	<!--首页-->
 	<div class="row">
 		<div class="col-md-12 column">
 		<img src="image/slide_test_1.jpg"/>
@@ -91,7 +94,7 @@
 	<div class="row">
 		<div class="col-md-8">
 			<div class="note-list-header">
-			内容分页
+			内容区域导航
 			</div>
 			<div class="note-list">
 				<div class="notes">
@@ -123,30 +126,142 @@
 			</div>
 		</div>
 		<div class="sidebar col-md-4">
+			<div class="sidebar-header">
+				热门笔记				</div>
 			<ul>
-				<li class="topic topic-55">
+				<li>
 					<a href="#">人类之所以为人，独特脑区是奥妙所在？</a>
 				</li>
-				<li class="topic topic-55">
+				<li>
 					<a href="#">[黑白印画]路人甲乙丙丁</a>
 				</li>
-				<li class="topic topic-55">
-					<a href="#">TEST</a>
-				</li>
-				<li class="topic topic-55">
-					<a href="#">TEST</a>
-				</li>
-				<li class="topic topic-55">
-					<a href="#">TEST</a>
+				<li>
+					<a href="#">如果冰岛没有了冰</a>
 				</li>
 			</ul>
 		</div>
 	</div>
+
+
+
+
+	<!--登录后页面 START-->
+	<div class="row">
+		<div class="col-md-8">
+			<div class="note-list-header">
+			
+			</div>
+			<div class="note-list">
+				<table class="table table-striped">
+			      <thead>
+			        <tr>
+			          <th>#</th>
+			          <th>title</th>
+			          <th>来源</th>
+			          <th>已经分享</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr>
+			          <td>1</td>
+			          <td>人类之所以为人，独特脑区是奥妙所在？</td>
+			          <td>evernote</td>
+			          <td>yes</td>
+			        </tr>
+			        <tr>
+			          <td>1</td>
+			          <td>人类之所以为人，独特脑区是奥妙所在？</td>
+			          <td>evernote</td>
+			          <td>yes</td>
+			        </tr>
+			        <tr>
+			          <td>1</td>
+			          <td>人类之所以为人，独特脑区是奥妙所在？</td>
+			          <td>evernote</td>
+			          <td>yes</td>
+			        </tr>
+			        <tr>
+			          <td>1</td>
+			          <td>人类之所以为人，独特脑区是奥妙所在？</td>
+			          <td>evernote</td>
+			          <td>yes</td>
+			        </tr>
+			        <tr>
+			          <td>1</td>
+			          <td>人类之所以为人，独特脑区是奥妙所在？</td>
+			          <td>evernote</td>
+			          <td>yes</td>
+			        </tr>
+			      </tbody>
+			    </table>
+			</div>
+		</div>
+		<div class="sidebar col-md-4">
+			<div class="sidebar-header">个人中心</div>
+			<ul>
+				<li>
+					<a href="#">分享笔记</a>
+				</li>
+				<li>
+					<a href="#">账户管理</a>
+				</li>
+				<li>
+					<a href="#">密码修改</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
 	<footer>
 		<hr/>
-		<p>Copyright@fenzhishi.com</p>
+		<div class="copyright">
+			<p style="font-family: 'Tangerine', cursive;font-size:24px;">Share your brain. </p>
+		</div>
+		
 	</footer>
 </div>
+<script type="text/javascript">
+        $(window).scroll(function() {
+            var scrolls = $(this).scrollTop();
+            if (scrolls > 40) {
+                if (window.XMLHttpRequest) {
+                    $("#color-header").css({
+                        position: "fixed",
+                        top: 0
+                    });
+                    $("#color-header-logo").show();
+                } else {
+                    $("#color-header").css({
+                        top: scrolls
+                    });
+                }
+            }else {
+                $("#color-header").css({
+                    position: "absolute",
+                    top: "40px"
+                });
+                $("#color-header-logo").hide();
+            }
+        });
+   </script>
 
+<!-- Modal -->
+<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">授权登录</h4>
+      </div>
+      <div class="modal-body">
+        Evernote,  印象笔记, 麦库, 为知笔记, 有道笔记
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

@@ -7,18 +7,26 @@ body {
   line-height: @line-height-base;
   color: @text-color;
   background-color: @body-bg;
+//  padding-top:80px;
 }
 
 .navbar {
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  margin-bottom: @navbar-margin-bottom;
+  margin-bottom:0;
   border: 1px solid transparent;
-
-  @media (min-width: @grid-float-breakpoint) {
-    border-radius: @navbar-border-radius;
-  }
+  border-radius:0px;
+  background-color:＃FFF;
 }
 
+.top-header {
+margin-bottom:40px;
+//	position: fixed;
+//	right: 0;
+//	left: 0;
+//	top:0;
+//	z-index: 1030;
+//	padding:0;
+}
 .navbar-brand{
 	margin:0;
 	padding:0;
@@ -40,16 +48,21 @@ body {
 .form-control{
 	height:27px;
 }
-
 .container-white{
 	background-color:@white;
 }
 
-.container-fluid-top{
+.color-header{
 	height:40px;
-	background-color:@gray;
+	background-color:rgba(88,88,91,0.8);
+	z-index:999;
+	left:0;
+	right:0;
+	position:fixed;
+	top:40px;
 	h1{
 		margin:0;
+		display: inline-block;
 		line-height:40px;
 		font-size:16px;
 		a{
@@ -57,7 +70,20 @@ body {
 
 		}
 	}
+	#color-header-logo{
+		display:none;
+		border:none;
+		margin:0;
+	}
+	.pagetitle{
+		img{
+			margin:0;
+			padding:0;
+			float:left;
+		}
+	}
 }
+
 .row {
 	margin:0;
 }
@@ -69,21 +95,21 @@ body {
 
 
 .note-list{
-	
+	background:#FFF;
 }
 
 .note-list-header{
-	background-color:@gray-light;
-	height:24px;
-	line-height:24px;
-	color:white;
-	font-size:12px;
-	padding-left:10px;
+	background-color:#FFF;
+	height:30px;
+	line-height:30px;
+	color:orange;
+	font-size:14px;
+	padding-left:20px;
 }
 
 .notes{
 	.note{
-		border-bottom:11px solid #FAFAFA;
+		border-bottom:11px solid #FFF;
 		background:rgb(245, 243, 243);
 		.note-title{
 			padding:10px 20px;
@@ -101,6 +127,15 @@ body {
 
 
 .sidebar{
+	margin-top:30px;
+	.sidebar-header{
+		background-color:orange;
+		color:#000;
+		height:30px;
+		line-height:30px;
+		font-size:14px;
+		padding-left:20px;
+	}
 	ul{
 		list-style-type: none;
 		padding:0;
@@ -110,12 +145,16 @@ body {
 			padding:0 10px;
 			line-height:36px;
 			position: relative;
-			background-color: #e4f7fd;
-			border-bottom: 2px #f8fcfd solid;
+			background-color: #ffebd2;
+			border-bottom: 1px #fff8f0 solid;
 			a{
 				color:#000;
 			}
 		}
 	}
 	
+}
+
+.copyright{
+	text-align:center;
 }

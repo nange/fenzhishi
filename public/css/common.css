@@ -3,17 +3,17 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #000000;
-  background-color: #ffffff;
+  background-color: #fcfcfc;
 }
 .navbar {
   min-height: 40px;
   margin-bottom: 0;
   border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: ＃FFF;
 }
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 4px;
-  }
+.top-header {
+  margin-bottom: 40px;
 }
 .navbar-brand {
   margin: 0;
@@ -37,17 +37,33 @@ body {
 .container-white {
   background-color: #ffffff;
 }
-.container-fluid-top {
+.color-header {
   height: 40px;
-  background-color: #555555;
+  background-color: rgba(88, 88, 91, 0.8);
+  z-index: 999;
+  left: 0;
+  right: 0;
+  position: fixed;
+  top: 40px;
 }
-.container-fluid-top h1 {
+.color-header h1 {
   margin: 0;
+  display: inline-block;
   line-height: 40px;
   font-size: 16px;
 }
-.container-fluid-top h1 a {
+.color-header h1 a {
   color: #ffffff;
+}
+.color-header #color-header-logo {
+  display: none;
+  border: none;
+  margin: 0;
+}
+.color-header .pagetitle img {
+  margin: 0;
+  padding: 0;
+  float: left;
 }
 .row {
   margin: 0;
@@ -102,16 +118,19 @@ body {
 .col-lg-12 {
   padding: 0;
 }
+.note-list {
+  background: #FFF;
+}
 .note-list-header {
-  background-color: #999999;
-  height: 24px;
-  line-height: 24px;
-  color: white;
-  font-size: 12px;
-  padding-left: 10px;
+  background-color: #FFF;
+  height: 30px;
+  line-height: 30px;
+  color: orange;
+  font-size: 14px;
+  padding-left: 20px;
 }
 .notes .note {
-  border-bottom: 11px solid #FAFAFA;
+  border-bottom: 11px solid #FFF;
   background: #f5f3f3;
 }
 .notes .note .note-title {
@@ -125,6 +144,17 @@ body {
 .notes .note .note-content {
   padding: 5px 20px;
 }
+.sidebar {
+  margin-top: 30px;
+}
+.sidebar .sidebar-header {
+  background-color: orange;
+  color: #000;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  padding-left: 20px;
+}
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -135,9 +165,12 @@ body {
   padding: 0 10px;
   line-height: 36px;
   position: relative;
-  background-color: #e4f7fd;
-  border-bottom: 2px #f8fcfd solid;
+  background-color: #ffebd2;
+  border-bottom: 1px #fff8f0 solid;
 }
 .sidebar ul li a {
   color: #000;
+}
+.copyright {
+  text-align: center;
 }
