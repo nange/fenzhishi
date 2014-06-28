@@ -1,10 +1,15 @@
 {
   "name": "fenzhishi",
-  "repository": "https://github.com/nange/fenzhishi",
   "version": "0.0.1",
+  "description": "fenzhishi",
   "scripts": {
-    "start": "node app.js"
+    "start": "node --harmony app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nange/fenzhishi"
+  },
+  "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-connect": "~0.5.0",
@@ -12,9 +17,10 @@
     "grunt-contrib-watch": "~0.5.3"
   },
   "dependencies": {
-    "express": "3.4.0",
-    "handlebars": "*",
-    "express3-handlebars": "*",
-    "grunt": "~0.4.1"
+    "koa": "^0.8.1",
+    "koa-hbs": "^0.4.5",
+    "koa-router": "^3.1.4",
+    "koa-session": "^2.0.0",
+    "koa-static": "^1.4.5"
   }
 }
