@@ -2,12 +2,13 @@ var koa = require('koa');
 var router = require('koa-router');
 var session = require('koa-session');
 var hbs = require('koa-hbs');
-var static = require('koa-static');
+var staticSer = require('koa-static');
+var config = require('./config');
 
 var app = koa();
 
 if (app.env !== 'production') {
-  app.use(static('./public'));
+  app.use(staticSer('./public'));
 }
 app.use(session());
 app.use(hbs.middleware({
