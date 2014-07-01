@@ -8,8 +8,7 @@ module.exports = function(grunt) {
           paths: ["less"]
         },
   	    files: {
-  	      "public/css/common.css": "less/common.less",
-          "public/css/pages.css": "less/pages.less"
+  	      "public/css/fenzhishi.css": "less/fenzhishi.less"
   	    }
   	  }
     },
@@ -37,7 +36,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['less']);
+  grunt.registerTask('default', ['less', 'watch']);
   grunt.registerTask('server', ['connect']);
  
 };
