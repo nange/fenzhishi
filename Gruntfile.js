@@ -16,7 +16,6 @@ module.exports = function(grunt) {
       server: {
         options: {
           hostname: '0.0.0.0',
-          //base: 'mockup',
           port: 9000,
           keepalive: true
         }
@@ -24,8 +23,8 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: 'less/*.less',
-        tasks: ['less']        
+        files: 'less/**/*.less',
+        tasks: ['less']
       }
     }
 
