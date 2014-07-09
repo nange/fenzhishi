@@ -1,82 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Demo Page</title>
-	<link rel="stylesheet" href="../public/css/fenzhishi.css">
-	<script src="../public/js/main.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Page</title>
+  <link rel="stylesheet" href="../public/css/fenzhishi.css">
+  <script src="../public/js/main.js"></script>
 </head>
-<body>
-	<div class="navbar-fenzhishi navbar-static-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">展开</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/"><img src="../public/image/logo.png" title="分之十" id="logo-img"/><!-- <span>分之十，分知识</span> --></a>
-			</div>
-			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-				<ul class="nav navbar-nav">
-					<li class="active">
-						<a href="#">首页</a>
-					</li>
-					<li>
-						<a href="#">通知</a>
-					</li>
-					<li>
-						<a href="#">我</a>
-					</li>
-				</ul>
-				<div class="col-sm-3 col-md-3 pull-left">
-					<form class="navbar-form" role="search">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="搜索" name="srch-term" id="srch-term">
-<!-- 							<div class="input-group-btn">
-								<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-							</div> -->
-						</div>
-					</form>
-				</div>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">设置<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">测试</a></li>
-							<li><a href="#">注销</a></li>
-						</ul>
-					</li>
-				</ul>
+<body style="height:100%;position:absolute;width:100%">
+  <div class="navbar-fenzhishi navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">展开</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="../public/image/logo.png" title="分之十" id="logo-img"/><!-- <span>分之十，分知识</span> --></a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#">探索</a>
+          </li>
+        </ul>
 
-			</nav>
-		</div>
-	</div>
+      </nav>
+    </div>
+  </div>
+  
 
-	<div class="container page-container main">
-		<div class="row">
-			<div class="col-md-8">
-				<div class="auth_dashbord">
-					<a href="#"><img src="http://evernote.com/media/img/logo-new.png" height="24px">授权登录</a>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="right-card" id="info">
-					<div class="rcard_title">右侧普通挂件标题</div>
-					<div class="rcard_content">
-						<p>分之十，分知识。</p>
-						<p>右侧普通挂件内容</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="footer">
-		<div class="container">
-			<p class="text-muted">@nange, @weibin, 代码如诗</p>
-		</div>
-	</div>
+<div class="site site-landing" style="">
+
+  <div class="container page-container">
+    <div class="row">
+      <div class="col-md-6">
+         <img src="">
+      </div>
+      <div class="col-md-6">
+        <div style="text-align:center;padding-top:50%;width:100%;height:100%;float:right">
+          <h1>分之十，分知识。</h1><br/>
+          <p><button class="btn btn-success" type="submit"><img src="../public/image/evernote.png" height="24px"> Evernote 授权登录</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+      <p class="text-muted" style="position:absolute;bottom:10px;">@nange, @weibin, 代码如诗</p>
+    </div>
+</div>
+  
 </body>
 </html>
