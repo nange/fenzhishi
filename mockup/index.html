@@ -1,274 +1,213 @@
 <!DOCTYPE html>
-<html lang="cn">
-<head>
-	<meta charset="utf-8">
-	<title>分之十/index test</title>
-
-	<link rel="stylesheet" href="../public/vendor/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="../public/vendor/bootstrap/css/bootstrap-theme.css">
-
-	<link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" href="../public/css/common.css">
-
-	<script type="text/javascript" src="../public/vendor/jquery/jquery-2.1.0.js"></script>
-	<script type="text/javascript" src="../public/vendor/bootstrap/js/bootstrap.js"></script>
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	  <![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Demo Page</title>
+		<link rel="stylesheet" href="../public/css/fenzhishi.css">
+		<script src="../public/js/main.js"></script>
 	</head>
 	<body>
-		<div class="container-fluid top-header">
-			<header class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="navbar" role="navigation">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-								<a class="navbar-brand" href="#"><img src="../public/image/logo.png"/></a>
-							</div>
-							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div class="collapse navbar-collapse" id="navbar-collapse-1">
-								<ul class="nav navbar-nav">
-									<li class="active"><a href="#">主题</a></li>
-									<li><a href="#">分类</a></li>
-									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">标签 <b class="caret"></b></a>
-										<ul class="dropdown-menu">
-											<li><a href="#">tag1</a></li>
-											<li><a href="#">tag2</a></li>
-											<li><a href="#">tag3</a></li>
-										</ul>
-									</li>
-								</ul>
-								<form class="navbar-form navbar-left" role="search">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="关键词...">
-									</div>
-									<button type="submit" class="btn btn-default">搜索</button>
-								</form>
-								<ul class="nav navbar-nav navbar-right">
-									<li><a href="#" data-toggle="modal" data-target="#LoginModal">登录</a></li>
-									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Weibin <b class="caret"></b></a>
-										<ul class="dropdown-menu">
-											<li><a href="#">笔记</a></li>
-											<li><a href="#">个人中心</a></li>
-											<li class="divider"></li>
-											<li><a href="#">注销</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div><!-- /.navbar-collapse -->
+<div class="navbar-fenzhishi navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">展开</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/"><img src="../public/image/logo.png" title="分之十" id="logo-img"/><!-- <span>分之十，分知识</span> --></a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">通知</a>
+					</li>
+					<li>
+						<a href="#">我</a>
+					</li>
+				</ul>
+				<div class="col-sm-3 col-md-3 pull-left">
+					<form class="navbar-form" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="搜索" name="srch-term" id="srch-term">
+<!-- 							<div class="input-group-btn">
+								<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+							</div> -->
 						</div>
-					</div>
+					</form>
 				</div>
-			</header>
-		</div><!-- /.container-->
-		<div class="container-fluid color-header" id="color-header">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 pagetitle">
-						<a href="/" id="color-header-logo" class="navbar-brand" title="首页"><img src="../public/image/logo-white.png"/></a>
-						<a href="#"><img src="../public/image/color-header-bread.png"/></a><!--css background-->
-						<h1><a href="/">因为欣赏，所以分享。（此处为页面主标题）</a></h1>
-						<!--<a href="#">收藏笔记</a>-->
-					</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">设置<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">测试</a></li>
+							<li><a href="#">注销</a></li>
+						</ul>
+					</li>
+				</ul>
 
-					<div class="col-md-4 actions">
-						<a href="/" aria-hidden="true" class="" data-container="body" data-toggle="tooltip" title=""></a>
+			</nav>
+		</div>
+	</div>
 
-					</div>
-				</div>
+<div class="container page-container main">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="auth_dashbord">
+			<a href="#"><img src="http://evernote.com/media/img/logo-new.png" height="24px">授权登录</a>
 			</div>
 		</div>
-		<div class="container">
-			<!--首页-->
-			<div class="row">
-				<div class="col-md-12 column">
-					<img src="../public/image/slide_test_1.jpg"/>
+	</div>
+</div>
+
+<div class="container page-container main">
+	<div class="row">
+		<div class="col-md-8">
+			<article class="note-list">
+				<div class="note-header">
+					<div class="note-author pull-right">
+						<img class="avatar" src="../public/image/nange.png">
+						<span>nange</span>
+					</div>
+					<div class="note-header-left">
+						<h2 class="note-title"><a href="#">底部测试栏目(头像右侧)</a></h2>
+						<div class="note-meta">
+							<span class="category"><a href="#">类别显示</a></span>&nbsp;&nbsp;2014-05-21
+						</div>
+					</div>
 				</div>
+				<div class="note-content">
+					<p>智能硬件界的扰攘在继续，这次轮到智能手环、蓝牙设备大厂 Jawbone。企业动向嗅觉一向灵敏的 <a href="http://techcrunch.com/2014/05/23/rampant-speculation-disguised-as-news/">TechCrunch</a> 收到爆炸性消息称， Jawbone 即将被收购，而买家很可能是 Google，收购价达数十亿美元。</p>
+				</div>
+				<div class="note-bottom">
+					<ul class="note-stat">
+						<li><span class="num">10</span><span>转存</span></li>
+						<li><span class="num">100</span><span>收藏</span></li>
+						<li><span class="num">5</span><span>评论</span></li>
+					</ul>
+					<div class="note-author pull-right">
+						<img src="http://evernote.com/media/img/logo-new.png">
+					</div>
+					<div class="clear"></div>
+				</div>
+			</article>
+			<article class="note-list">
+				<div class="note-header">
+					<div class="note-author pull-right">
+						<img class="avatar" src="../public/image/nange.png">
+						<span>nange</span>
+					</div>
+					<div class="note-header-left">
+						<h2 class="note-title"><a href="#">底部测试栏目(头像右侧)</a></h2>
+						<div class="note-meta">
+							<span class="category"><a href="#">类别显示</a></span>&nbsp;&nbsp;2014-05-21
+						</div>
+					</div>
+				</div>
+				<div class="note-content">
+					<p>智能硬件界的扰攘在继续，这次轮到智能手环、蓝牙设备大厂 Jawbone。企业动向嗅觉一向灵敏的 <a href="http://techcrunch.com/2014/05/23/rampant-speculation-disguised-as-news/">TechCrunch</a> 收到爆炸性消息称， Jawbone 即将被收购，而买家很可能是 Google，收购价达数十亿美元。</p>
+				</div>
+				<div class="note-content-thumb">
+					<img src="http://cdn.ifanr.cn/wp-content/uploads/2014/05/DSCF21062.jpg">
+					<img src="http://cdn.ifanr.cn/wp-content/uploads/2014/05/Beats-Apple.jpg">
+				</div>
+				<div class="note-bottom">
+					<ul class="note-stat">
+						<li><span class="num">10</span><span>转存</span></li>
+						<li><span class="num">100</span><span>收藏</span></li>
+						<li><span class="num">5</span><span>评论</span></li>
+					</ul>
+					<div class="note-author pull-right">
+						<img src="http://evernote.com/media/img/logo-new.png">
+					</div>
+					<div class="clear"></div>
+				</div>
+			</article>
+			<article class="note-list">
+				<div class="note-header">
+					<div class="note-header-left">
+						<h2 class="note-title"><a href="#">我的笔记</a></h2>
+						<div class="note-meta">
+							显示我的笔记本
+						</div>
+					</div>
+					<div class="list-group">
+    <a href="#" class="list-group-item active">
+      Linked item in .list-group
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="badge">44</span>
+    </a>
+    <a href="#" class="list-group-item disabled">Linked item in .list-group with Chevron and Badge
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="badge badge-primary">14</span>
+    </a>
+    <a href="#" class="list-group-item">This is a preview of BS3
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="badge">5</span>
+    </a>
+    <a href="#" class="list-group-item">What happened to `badge-success`?
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="badge badge-success">88</span>
+    </a>
+    <a href="#" class="list-group-item">Vestibulum at eros
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="badge">69</span>
+    </a>
+  </div>
+
+				</div>
+			</article>
+
+			
+		</div>
+		<div class="col-md-4">
+			<div class="right-card" id="my">
+				<div class="my-profile">
+					<a href="">
+						<img class="avatar" height="64px" src="../public/image/nange.png">
+					</a>
+					<div class="">
+						<a class="" href="#">nange</a>
+					</div>
+				</div>
+				<div class="my-stat">
+					<ul class="">
+						<li>
+							<a><span class="my-stat-num">10</span><span>分享</span></a>
+						</li>
+						<li>
+							<a><span  class="my-stat-num">10</span><span>收藏</span></a>
+						</li>
+						<li>
+							<a><span  class="my-stat-num">100</span><span>关注</span></a>
+						</li>
+						<li>
+							<a><span  class="my-stat-num">10</span><span>粉丝</span></a>
+						</li>
+					</ul>
+				</div>
+				<div class="notice">
+					<span>你有 1 条未读通知</span>
+				</div>
+
+
+
 			</div>
-			<div class="row">
-				<div class="col-md-8">
-					<div class="note-list-header">
-						内容区域导航
-					</div>
-					<div class="note-list">
-						<div class="notes">
-							<article class="note note-1">
-								<h3 class="note-title"><img src="../public/image/notes-list-evernote-icon.png" width="30px"/>[黑白印画]路人甲乙丙丁</h3>
-								<div class="note-content">
-									<p>机型 D90+宾得+手机 身边有什么拿什么拍 非器材党</p><p>
-									一直觉得摄影就是为了记录下生活中的那些美好的景色和动人的瞬间</p>
-								</div>
-							</article>
-							<article class="note note-2">
-								<div class="featured-img">
-									<img src="../public/image/notes-list-head-1.png"/>
-								</div>
-								<h3 class="note-title"><img src="../public/image/notes-list-cloud-icon.png" width="30px"/>人类之所以为人，独特脑区是奥妙所在？</h3>
-								<div class="note-content">
-									<p>是什么让我们成为人类？近日，牛津大学的研究人员在人脑中发现了一个区域，它似乎和与我们亲缘关系最近的那些动物脑中的任何部位都不相似。这个脑区与一些最高级的计划和决策过程密切相关，而这些过程在我们看来为人类所特有。研究论文于2014年2月初发表于《神经元》杂志上（原文献戳这里）。</p><p>
+			<div class="right-card" id="info">
 
-									“我们在人类前额皮质中定位到一个区域，在猴脑中似乎根本没有一个区域能与之对应。”论文第一作者、牛津大学的弗朗兹-撒韦·纽波特（Franz-Xaver Neubert）说，“这个区域已经确认与策略计划、决策以及多任务处理相关。”</p>
-								</div>
-							</article>
-							<article class="note note-1">
-								<h3 class="note-title"><img src="../public/image/notes-list-evernote-icon.png" width="30px"/>如果冰岛没有了冰</h3>
-								<div class="note-content">
-									<p>（文/Cheryl Katz）在冰岛的索尔黑马冰川（Solheimajokull），一阵凛冽寒风从冰川上呼啸而过，就像古老的冰岛史诗中驾驭天气的女巫一般，抛下冰雪和砂砾。</p><p>
-									延伸至冰岛东南海岸的索尔黑马冰川已成了近年气候变化的象征：过去二十年来，由于气温攀升、海洋暖流和季节紊乱，这座冰川每年向后退缩相当于一座奥运会泳池的距离。</p>
-								</div>
-							</article>
-
-						</div>
-					</div>
-				</div>
-				<div class="sidebar col-md-4">
-					<div class="sidebar-header">
-						热门笔记				</div>
-						<ul>
-							<li>
-								<a href="#">人类之所以为人，独特脑区是奥妙所在？</a>
-							</li>
-							<li>
-								<a href="#">[黑白印画]路人甲乙丙丁</a>
-							</li>
-							<li>
-								<a href="#">如果冰岛没有了冰</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-
-
-
-				<!--登录后页面 START-->
-				<div class="row">
-					<div class="col-md-8">
-						<div class="note-list-header">
-
-						</div>
-						<div class="note-list">
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th>#</th>
-										<th>title</th>
-										<th>来源</th>
-										<th>已经分享</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>人类之所以为人，独特脑区是奥妙所在？</td>
-										<td>evernote</td>
-										<td>yes</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>人类之所以为人，独特脑区是奥妙所在？</td>
-										<td>evernote</td>
-										<td>yes</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>人类之所以为人，独特脑区是奥妙所在？</td>
-										<td>evernote</td>
-										<td>yes</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>人类之所以为人，独特脑区是奥妙所在？</td>
-										<td>evernote</td>
-										<td>yes</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>人类之所以为人，独特脑区是奥妙所在？</td>
-										<td>evernote</td>
-										<td>yes</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="sidebar col-md-4">
-						<div class="sidebar-header">个人中心</div>
-						<ul>
-							<li>
-								<a href="#">分享笔记</a>
-							</li>
-							<li>
-								<a href="#">账户管理</a>
-							</li>
-							<li>
-								<a href="#">密码修改</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-
-				<footer>
-					<hr/>
-					<div class="copyright">
-						<p style="font-family: 'Tangerine', cursive;font-size:24px;">Share your brain. </p>
-					</div>
-
-				</footer>
 			</div>
-			<script type="text/javascript">
-				$(window).scroll(function() {
-					var scrolls = $(this).scrollTop();
-					if (scrolls > 40) {
-						if (window.XMLHttpRequest) {
-							$("#color-header").css({
-								position: "fixed",
-								top: 0
-							});
-							$("#color-header-logo").show();
-						} else {
-							$("#color-header").css({
-								top: scrolls
-							});
-						}
-					}else {
-						$("#color-header").css({
-							position: "absolute",
-							top: "40px"
-						});
-						$("#color-header-logo").hide();
-					}
-				});
-			</script>
-
-			<!-- Modal -->
-			<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title" id="myModalLabel">授权登录</h4>
-						</div>
-						<div class="modal-body">
-							Evernote,  印象笔记, 麦库, 为知笔记, 有道笔记
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</body>
-		</html>
+		</div>
+	</div>
+</div>
+<div id="footer">
+      <div class="container">
+        <p class="text-muted">@nange, @weibin, 代码如诗</p>
+      </div>
+</div>
+</body>
+</html>
