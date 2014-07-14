@@ -1,9 +1,15 @@
+/**
+ * 程序入口
+ *
+ */
+
 var koa = require('koa');
 var router = require('koa-router');
 var session = require('koa-session');
 var hbs = require('koa-hbs');
 var staticSer = require('koa-static');
 var config = require('./config');
+var localRouter = require('./router');
 
 var app = koa();
 
@@ -21,11 +27,7 @@ app.use(hbs.middleware({
 
 app.use(router(app));
 
-app.get('/index', function* () {
-  var name = this.query.name;
-
-  yield this.render('index', {name: name, title: 'Home page'});
-});
+localRouter(app);
 
 
 app.listen(3000);

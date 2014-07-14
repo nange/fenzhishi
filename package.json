@@ -17,7 +17,7 @@
     "grunt-contrib-watch": "~0.5.3"
   },
   "dependencies": {
-    "generic-note": "*",
+    "generic-note": "1.x",
     "generic-pool": "^2.1.0",
     "koa": "^0.8.1",
     "koa-hbs": "^0.4.5",
