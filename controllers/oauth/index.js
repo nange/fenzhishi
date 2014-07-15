@@ -3,35 +3,50 @@
  * 获取accessToken
  *
  */
-
+var thunk    = require('thunkify');
 var GenericNote = require('generic-note');
 var config = require('../../config');
 
 module.exports = function(app) {
 
   app.get('/oauth', function* () {
-    var _this = this;
-    var OAClient = GenericNote.OAuthClient(config.consumerKey, config.consumerSecret, 'evernote');
+    try {
+      var OAClient = GenericNote.OAuthClient(config.consumerKey,
+        config.consumerSecret, 'evernote');
 
-    OAClient.getRequestToken(
-      config.callbackUrl,
-      function(error, oauthToken, oauthTokenSecret) {
+      var getRequestToken = thunk(OAClient.getRequestToken);
 
-        if (error) {
-          _this.session.error = JSON.stringify(error);
-          _this.body = this.session.error;
+      var result = yield getRequestToken.call(OAClient, config.callbackUrl);
 
-        } else {
-          // store the tokens in the session
-          _this.session.oauthToken = oauthToken;
-          _this.session.oauthTokenSecret = oauthTokenSecret;
+      this.session.oauthToken = result.oauthToken;
+      this.session.oauthTokenSecret = result.oauthTokenSecret;
 
-          // redirect the user to authorize the token
-          _this.redirect(OAClient.getAuthorizeUrl(oauthToken));
-        }
+      // redirect the user to authorize the token
+      this.redirect(OAClient.getAuthorizeUrl(result.oauthToken));
 
-      }
-    );
+    } catch (error) {
+      this.body = error;
+    }
+
+  });
+
+  app.get('/oauth_callback', function* () {
+    try {
+      var OAClient = GenericNote.OAuthClient(config.consumerKey,
+        config.consumerSecret, 'evernote');
+
+      var getAccessToken = thunk(OAClient.getAccessToken);
+
+      var result = yield getAccessToken.call(OAClient, this.session.oauthToken,
+        this.session.oauthTokenSecret, this.query.oauth_verifier);
+
+      this.session.oauthAccessToken = result.oauthAccessToken;
+
+      this.body = 'oauthAccessToken:' + result.oauthAccessToken;
+
+    } catch (error) {
+      this.body = error;
+    }
 
   });
 

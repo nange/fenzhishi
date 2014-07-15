@@ -16,7 +16,10 @@ var app = koa();
 if (app.env !== 'production') {
   app.use(staticSer('./public'));
 }
+
+app.keys = ['fenzhishi'];
 app.use(session());
+
 app.use(hbs.middleware({
   viewPath: __dirname + '/views',
   partialsPath: __dirname + '/views/partials',
