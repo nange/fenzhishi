@@ -257,7 +257,7 @@ th {
 }
 @media (min-width: 768px) {
   .container {
-    width: 730px;
+    width: 720px;
   }
 }
 @media (min-width: 992px) {
@@ -3422,9 +3422,17 @@ a.list-group-item-danger.active:focus {
   -webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
 }
+html {
+  min-height: 100%;
+}
 body {
   background: #ffffff;
   padding: 0;
+}
+.login-body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 .navbar-fenzhishi {
   background-color: #FFF;
@@ -3714,7 +3722,7 @@ tbody.collapse.in {
 }
 .site-landing {
   height: 100%;
-  background: url('https://dt8kf6553cww8.cloudfront.net/static/images/index/devices-vfl3TTUs-.png') no-repeat 25% 35%;
+  background: url('../image/bg-login.png') no-repeat 25% 35%;
 }
 .auth_dashbord {
   background: #FFF;

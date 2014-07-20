@@ -10,20 +10,31 @@
   -o-border-radius: @radius;
   border-radius: @radius;
 }
-.clear{
+
+.clear {
   clear:both;
 }
 
 
-.shadow{
+.shadow {
   box-shadow: 0 2px 2px -1px rgba(0,0,0,.1);
   -webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.1);
   -moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.1);
 }
 
-body{
+html {
+  min-height: 100%;
+}
+
+body {
   background: @white;
   padding:0;
+}
+
+.login-body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .navbar-fenzhishi {
@@ -360,7 +371,7 @@ tbody.collapse.in {
 //landingpage
 .site-landing{
   height:100%;
-  background:url('https://dt8kf6553cww8.cloudfront.net/static/images/index/devices-vfl3TTUs-.png') no-repeat 25% 35%;
+  background:url('../image/bg-login.png') no-repeat 25% 35%;
   // background:url('../image/P1200515.jpg');
   // color:@white;
 }

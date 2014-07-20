@@ -7,14 +7,15 @@ var koa = require('koa');
 var router = require('koa-router');
 var session = require('koa-session');
 var hbs = require('koa-hbs');
-var staticSer = require('koa-static');
+var staticServ = require('koa-static');
 var config = require('./config');
+var mongoose = require('mongoose');
 var localRouter = require('./router');
 
 var app = koa();
 
 if (app.env !== 'production') {
-  app.use(staticSer('./public'));
+  app.use(staticServ('./public'));
 }
 
 app.keys = ['fenzhishi'];
@@ -29,6 +30,8 @@ app.use(hbs.middleware({
 }));
 
 app.use(router(app));
+
+mongoose.connect(config.dburl);
 
 localRouter(app);
 
