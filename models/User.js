@@ -12,8 +12,9 @@ var schema = mongoose.Schema({
   follow: [String],
   follower: [String],
   star: [String],
+  mainType: String,
   token: [{
-    type: String, 
+    type: String,
     value: String
   }],
   message: [{

@@ -18,8 +18,10 @@
   },
   "dependencies": {
     "generic-note": "1.x",
+    "jsonwebtoken": "^0.4.1",
     "koa": "^0.8.1",
     "koa-hbs": "^0.4.5",
+    "koa-jwt-comm": "^0.1.1",
     "koa-router": "^3.1.4",
     "koa-session": "^2.0.0",
     "koa-static": "^1.4.5",

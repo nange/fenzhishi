@@ -11,6 +11,9 @@ var staticServ = require('koa-static');
 var config = require('./config');
 var mongoose = require('mongoose');
 var localRouter = require('./router');
+var jwt = require('koa-jwt-comm');
+
+global.rootpath = __dirname;
 
 var app = koa();
 
@@ -29,6 +32,11 @@ app.use(hbs.middleware({
   extname: '.html'
 }));
 
+app.use(jwt({
+  secret: 'fenzhishi', 
+  passthrough: true
+}));
+
 app.use(router(app));
 
 mongoose.connect(config.dburl);
@@ -36,6 +44,6 @@ mongoose.connect(config.dburl);
 localRouter(app);
 
 
-app.listen(3000);
+app.listen(80);
 
-console.log('server start listening on 3000');
+console.log('server start listening on 80');

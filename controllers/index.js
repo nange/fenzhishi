@@ -2,7 +2,7 @@
 module.exports = function(app) {
 
   app.get('/', function* () {
-    if (Object.keys(this.session).length) {
+    if (this.user) {
       yield this.render('index');
 
     } else {
