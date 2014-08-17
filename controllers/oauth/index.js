@@ -3,10 +3,12 @@
  * 获取accessToken
  *
  */
-var thunk    = require('thunkify');
+var debug = require('debug')('fenzhishi.com:controllers:oauth:index');
+var thunk = require('thunkify');
 var GenericNote = require('generic-note');
 var config = require('../../config');
 var jwt = require('koa-jwt-comm');
+var User = require('../../models/User');
 
 module.exports = function(app) {
 
@@ -15,7 +17,7 @@ module.exports = function(app) {
     try {
       var OAClient = GenericNote.OAuthClient(
         config.consumerKey,
-        config.consumerSecret, 
+        config.consumerSecret,
         type
       );
 
@@ -30,7 +32,7 @@ module.exports = function(app) {
       this.redirect(OAClient.getAuthorizeUrl(result.oauthToken));
 
     } catch (e) {
-      console.log(e);
+      debug('get /oauth error: %s', e);
       this.body = e;
     }
   });
@@ -39,14 +41,14 @@ module.exports = function(app) {
     try {
       var OAClient = GenericNote.OAuthClient(
         config.consumerKey,
-        config.consumerSecret, 
+        config.consumerSecret,
         this.session.type
       );
 
       OAClient.getAccessToken = thunk(OAClient.getAccessToken);
       var result = yield OAClient.getAccessToken(
         this.session.oauthToken,
-        this.session.oauthTokenSecret, 
+        this.session.oauthTokenSecret,
         this.query.oauth_verifier
       );
 
@@ -56,17 +58,58 @@ module.exports = function(app) {
       genNote.getUser = thunk(genNote.getUser);
 
       var user = yield genNote.getUser();
-      
+
+      User.findOne = thunk(User.findOne);
+      var userResult = yield User.findOne(
+        {
+          sign: {
+            type: this.session.type,
+            id: user.id
+          }
+        },
+        'id'
+      );
+      console.log('userResult' + userResult);
+      var jwtId;
+      if (!userResult) {
+        var finalUser = new User({
+          nickname: user.name,
+          sign: {
+            type: this.session.type,
+            id: user.id
+          },
+          mainType: this.session.type,
+          token: [{
+            type: this.session.type,
+            value: this.session.oauthAccessToken
+          }]
+        });
+
+        finalUser.save = thunk(finalUser.save);
+        var newUser = yield finalUser.save();
+
+        jwtId = newUser.id;
+      } else {
+        jwtId = userResult.id;
+      }
+
       var token = jwt.sign(
-        {userid: 'nange', time: new Date()},
+        {
+          id: jwtId,
+          time: new Date().getTime()
+        },
         'fenzhishi'
       );
-      this.cookies.set('authorization', 'Bearer ' + token);
-      
+      this.cookies.set(
+        'authorization',
+        'Bearer ' + token,
+        {expires: new Date().getTime() + 24*60*60*1000*365}
+      );
+
       this.redirect('/');
 
     } catch (e) {
-      console.log(e);
+      debug('get /oauth_callback error: %s', e);
       this.body = e;
     }
   });

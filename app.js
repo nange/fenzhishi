@@ -4,11 +4,12 @@
  */
 
 var koa = require('koa');
+var logger = require('koa-logger')
 var router = require('koa-router');
 var session = require('koa-session');
+var locals = require('koa-locals');
 var hbs = require('koa-hbs');
 var staticServ = require('koa-static');
-var config = require('./config');
 var mongoose = require('mongoose');
 var localRouter = require('./router');
 var jwt = require('koa-jwt-comm');
@@ -16,6 +17,10 @@ var jwt = require('koa-jwt-comm');
 global.rootpath = __dirname;
 
 var app = koa();
+
+app.use(logger());
+
+locals(app);
 
 if (app.env !== 'production') {
   app.use(staticServ('./public'));
@@ -38,8 +43,6 @@ app.use(jwt({
 }));
 
 app.use(router(app));
-
-mongoose.connect(config.dburl);
 
 localRouter(app);
 
