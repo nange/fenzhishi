@@ -3,6 +3,6 @@ define(['jquery'], function($) {
     init: function() {
       console.log('moduleB included.');
     }
-  }
+  };
 
 });

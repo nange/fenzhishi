@@ -18,8 +18,6 @@ global.rootpath = __dirname;
 
 var app = koa();
 
-app.use(logger());
-
 locals(app);
 
 if (app.env !== 'production') {

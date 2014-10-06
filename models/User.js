@@ -9,10 +9,7 @@ var autoIncrement = require('mongoose-auto-increment');
 var userSchema = mongoose.Schema({
   id: Number,
   nickname: String,
-  sign: {
-    type: String,
-    id: String
-  },
+  mark: {},
   pic: String,
   follow: [Number],
   follower: [Number],

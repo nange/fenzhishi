@@ -38,6 +38,7 @@ module.exports = function(app) {
   });
 
   app.get('/oauth_callback', function* () {
+    console.log('jin ru hui diao')
     try {
       var OAClient = GenericNote.OAuthClient(
         config.consumerKey,
@@ -62,36 +63,47 @@ module.exports = function(app) {
       User.findOne = thunk(User.findOne);
       var userResult = yield User.findOne(
         {
-          sign: {
+          mark: {
             type: this.session.type,
-            id: user.id
+            id: user.id + ''
           }
-        },
-        'id'
+        }
       );
       console.log('userResult' + userResult);
       var jwtId;
       if (!userResult) {
         var finalUser = new User({
           nickname: user.name,
-          sign: {
-            type: this.session.type,
-            id: user.id
-          },
           mainType: this.session.type,
           token: [{
             type: this.session.type,
             value: this.session.oauthAccessToken
           }]
         });
+        finalUser.mark = {
+          type: this.session.type,
+          id: user.id + ''
+        };
+        finalUser.markModified('mark');
+        var userPromise = new Promise(function(resolve, reject) {
+          finalUser.save(function(err, user) {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(user);
+            }
+          });
+        });
 
-        finalUser.save = thunk(finalUser.save);
-        var newUser = yield finalUser.save();
+        var newUser = yield userPromise;
+
+        console.log('newUSer: ' + newUser);
 
         jwtId = newUser.id;
       } else {
         jwtId = userResult.id;
       }
+      console.log('jwtId:' + jwtId);
 
       var token = jwt.sign(
         {
@@ -100,16 +112,16 @@ module.exports = function(app) {
         },
         'fenzhishi'
       );
+
       this.cookies.set(
         'authorization',
-        'Bearer ' + token,
-        {expires: new Date().getTime() + 24*60*60*1000*365}
+        'Bearer ' + token
       );
-
+      console.log('getTime:' + new Date().getTime());
       this.redirect('/');
 
     } catch (e) {
-      debug('get /oauth_callback error: %s', e);
+      console.log('some error:' + e);
       this.body = e;
     }
   });
