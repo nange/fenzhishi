@@ -3,7 +3,7 @@
  * 获取accessToken
  *
  */
-var debug = require('debug')('fenzhishi.com:controllers:oauth:index');
+var debug = require('debug')('controllers:oauth:index');
 var thunk = require('thunkify');
 var GenericNote = require('generic-note');
 var config = require('../../config');
@@ -38,7 +38,7 @@ module.exports = function(app) {
   });
 
   app.get('/oauth_callback', function* () {
-    console.log('jin ru hui diao')
+    debug('jin ru hui diao')
     try {
       var OAClient = GenericNote.OAuthClient(
         config.consumerKey,
@@ -69,7 +69,7 @@ module.exports = function(app) {
           }
         }
       );
-      console.log('userResult' + userResult);
+      debug('userResult' + userResult);
       var jwtId;
       if (!userResult) {
         var finalUser = new User({
@@ -97,13 +97,13 @@ module.exports = function(app) {
 
         var newUser = yield userPromise;
 
-        console.log('newUSer: ' + newUser);
+        debug('newUSer: ' + newUser);
 
         jwtId = newUser.id;
       } else {
         jwtId = userResult.id;
       }
-      console.log('jwtId:' + jwtId);
+      debug('jwtId:' + jwtId);
 
       var token = jwt.sign(
         {
@@ -117,11 +117,11 @@ module.exports = function(app) {
         'authorization',
         'Bearer ' + token
       );
-      console.log('getTime:' + new Date().getTime());
+      debug('getTime:' + new Date().getTime());
       this.redirect('/');
 
     } catch (e) {
-      console.log('some error:' + e);
+      debug('some error:' + e);
       this.body = e;
     }
   });

@@ -1,9 +1,10 @@
 {
   "name": "fenzhishi",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "fenzhishi",
   "scripts": {
-    "start": "node --harmony app.js"
+    "start": "DEBUG=controllers:* node --harmony app.js",
+    "debug": "node-debug --nodejs --harmony app.js"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,4 @@
+var debug = require('debug')('controllers:index');
 
 module.exports = function(app) {
 
@@ -13,6 +14,7 @@ module.exports = function(app) {
   });
 
   app.get('/login', function* () {
+    debug('now is login page...');
     yield this.render('login');
   });
 
