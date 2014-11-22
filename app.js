@@ -8,7 +8,7 @@ var logger = require('koa-logger')
 var router = require('koa-router');
 var session = require('koa-session');
 var locals = require('koa-locals');
-var hbs = require('koa-hbs');
+var handlebars = require("koa-handlebars");
 var staticServ = require('koa-static');
 var mongoose = require('mongoose');
 var localRouter = require('./router');
@@ -26,13 +26,13 @@ if (app.env !== 'production') {
 
 app.keys = ['fenzhishi'];
 app.use(session());
-
-app.use(hbs.middleware({
-  viewPath: __dirname + '/views',
-  partialsPath: __dirname + '/views/partials',
-  layoutsPath: __dirname + '/views/layouts',
-  defaultLayout: 'mainLayout',
-  extname: '.html'
+app.use(handlebars({
+  cache: app.env !== "development",
+  layoutsDir: 'views/layouts',
+  defaultLayout: "mainLayout",
+  viewsDir: 'views',
+  partialsDir: 'views/partials',
+  extension: '.html'
 }));
 
 app.use(jwt({

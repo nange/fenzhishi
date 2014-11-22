@@ -61,30 +61,29 @@ module.exports = function(app) {
       var user = yield genNote.getUser();
 
       User.findOne = thunk(User.findOne);
-      var userResult = yield User.findOne(
-        {
-          mark: {
-            type: this.session.type,
-            id: user.id + ''
-          }
+      var userResult = yield User.findOne({
+        mark: {
+          noteType: this.session.type,
+          id: user.id + ''
         }
-      );
-      debug('userResult' + userResult);
+      });
+      debug('user result: ' + userResult);
+
       var jwtId;
       if (!userResult) {
         var finalUser = new User({
           nickname: user.name,
           mainType: this.session.type,
+          mark: {
+            noteType: this.session.type,
+            id: user.id + ''
+          },
           token: [{
-            type: this.session.type,
+            noteType: this.session.type,
             value: this.session.oauthAccessToken
           }]
         });
-        finalUser.mark = {
-          type: this.session.type,
-          id: user.id + ''
-        };
-        finalUser.markModified('mark');
+        
         var userPromise = new Promise(function(resolve, reject) {
           finalUser.save(function(err, user) {
             if (err) {
@@ -96,10 +95,10 @@ module.exports = function(app) {
         });
 
         var newUser = yield userPromise;
-
-        debug('newUSer: ' + newUser);
+        debug('new user: ' + newUser);
 
         jwtId = newUser.id;
+
       } else {
         jwtId = userResult.id;
       }

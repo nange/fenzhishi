@@ -9,19 +9,22 @@ var autoIncrement = require('mongoose-auto-increment');
 var userSchema = mongoose.Schema({
   id: Number,
   nickname: String,
-  mark: {},
+  mark: {
+    noteType: String,
+    id: String
+  },
   pic: String,
   follow: [Number],
   follower: [Number],
   star: [String],
   mainType: String,
   token: [{
-    type: String,
+    noteType: String,
     value: String
   }],
   message: [{
     fromuser: String,
-    type: String,
+    msgType: String,
     where: String,
     readed: Boolean,
     time: Date,
