@@ -1,153 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo Page</title>
-  <link rel="stylesheet" href="../public/css/fenzhishi.css">
-  <!-- <link rel="stylesheet" href="../public/css/bootstrap.css"> -->
-  <script src="../public/js/lib/jquery-2.1.0.js"></script>
-  <script src="../public/js/lib/transition.js"></script>
-
-  <script src="../public/js/lib/tab.js"></script>
-  <script src="../public/js/lib/dropdown.js"></script>
-  <script src="../public/js/lib/collapse.js"></script>
-</head>
-<body>
-  <div class="navbar navbar-fenzhishi navbar-static-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">展开</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><img src="../public/image/logo.png" title="分之十" id="logo-img"/><!-- <span>分之十，分知识</span> --></a>
+<div class="site">
+  <div class="container page-container">
+    <div id="content">
+      <div>
+        <img class="avatar"  style="float:left;" height="40px" width="40px" src="/image/nange.png">
+        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs" style="padding-left:42px;">
+          <li class="active"><a href="#mynote" data-toggle="tab">我的云端笔记(12)</a></li>
+          <li><a href="#shared" data-toggle="tab">我分享的笔记(2)</a></li>
+          <li><a href="#stared" data-toggle="tab">我收藏的笔记(5)</a></li>
+          <li><a href="#followed" data-toggle="tab">我关注的人(1)</a></li>
+        </ul>
       </div>
-      <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation">
-        <ul class="navbar-nav nav">
-          <li class="active">
-            <a href="#">首页</a>
-          </li>
-          <li>
-            <a href="#">通知</a>
-          </li>
-          <li>
-            <a href="#">我</a>
-          </li>
-        </ul>
-        <div class="col-sm-3 col-md-3 pull-left">
-          <form class="navbar-form" role="search">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="搜索" name="srch-term" id="srch-term">
-              <!-- <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-              </div> -->
+      <div id="my-tab-content" class="tab-content">
+        <div class="tab-pane active" id="mynote">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="mynote-notebook">
+                <ul class="nav">
+                  <li class="active"><a href="#">我的笔记本一</a></li>
+                  <li><a href="#">我的笔记本二</a></li>
+                </ul>
+              </div>
             </div>
-          </form>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">ID<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">测试</a></li>
-              <li><a href="#">注销</a></li>
-            </ul>
-          </li>
-        </ul>
+            <div class="col-md-10">
+              <div class="mynote-op">
+                <!-- Split button -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">分享到类别
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">类别一</a></li>
+                    <li><a href="#">类别二</a></li>
+                    <li><a href="#">类别三</a></li>
 
-      </nav>
-    </div>
-  </div>
-  <div class="site">
-    <div class="container page-container">
-      <div id="content">
-        <div>
-          <img class="avatar"  style="float:left;" height="40px" width="40px" src="../public/image/nange.png">
-          <ul id="tabs" class="nav nav-tabs" data-tabs="tabs" style="padding-left:42px;">
-            <li class="active"><a href="#mynote" data-toggle="tab">我的云端笔记(12)</a></li>
-            <li><a href="#shared" data-toggle="tab">我分享的笔记(2)</a></li>
-            <li><a href="#stared" data-toggle="tab">我收藏的笔记(5)</a></li>
-            <li><a href="#followed" data-toggle="tab">我关注的人(1)</a></li>
-          </ul>
-        </div>
-        <div id="my-tab-content" class="tab-content">
-          <div class="tab-pane active" id="mynote">
-            <div class="row">
-              <div class="col-md-2">
-                <div class="mynote-notebook">
-                  <ul class="nav">
-                    <li class="active"><a href="#">我的笔记本一</a></li>
-                    <li><a href="#">我的笔记本二</a></li>
+                    <li><a href="#">类别四</a></li>
+                    <li class="divider"></li>
                   </ul>
+                  <button class="btn btn-default" type="submit">取消分享</button>
                 </div>
               </div>
-              <div class="col-md-10">
-                <div class="mynote-op">
-                  <!-- Split button -->
-                  <div class="btn-group">
-                    <!-- <button type="button" class="btn btn-danger">分享到类别</button>
-                  --><button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">分享到类别
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">类别一</a></li>
-                  <li><a href="#">类别二</a></li>
-                  <li><a href="#">类别三</a></li>
-
-                  <li><a href="#">类别四</a></li>
-                  <li class="divider"></li>
-                </ul>
-                <button class="btn btn-default" type="submit">取消分享</button>
-              </div>
-
-            </div>
-            <div class="mynote-notes">
-              <div class="list-group">
-                <a href="#" class="list-group-item">
-                <input type="checkbox" value="">标题党笔记分享<span class="badge" data-toggle="collapse" data-target="#shareid1">展开</span>
-                  <div id="shareid1" class="share-op collapse">标签：测试</div>
-                </a>
-                <a href="#" class="list-group-item"><input type="checkbox" value="">未分享笔记</a>
-                <a href="#" class="list-group-item"><input type="checkbox" value="">标题党分享<span class="badge">14</span></a>
-                <a href="#" class="list-group-item"><input type="checkbox" value="">标题党笔记分享<span class="badge">14</span></a>
-                <a href="#" class="list-group-item"><input type="checkbox" value="">标题党笔记分享<span class="badge">14</span></a> 
-                <a href="#" class="list-group-item"><input type="checkbox" value="">标题党笔记分享<span class="badge">14</span></a> 
-                <a href="#" class="list-group-item"><input type="checkbox" value="">标题党笔记分享<span class="badge">14</span></a>
+              <div class="mynote-notes">
+                <div class="list-group">
+                  <a href="#" class="list-group-item">
+                  <input type="checkbox" value="">标题党笔记分享<span class="badge" data-toggle="collapse" data-target="#shareid1">展开</span>
+                    <div id="shareid1" class="share-op collapse">标签：测试</div>
+                  </a>
+                  <a href="#" class="list-group-item"><input type="checkbox" value="">未分享笔记</a>
+                  <a href="#" class="list-group-item"><input type="checkbox" value="">标题党分享<span class="badge">14</span></a>
+                  <a href="#" class="list-group-item"><input type="checkbox" value="">标题党笔记分享<span class="badge">14</span></a>
+                  <a href="#" class="list-group-item"><input type="checkbox" value="">标题党笔记分享<span class="badge">14</span></a> 
+                  <a href="#" class="list-group-item"><input type="checkbox" value="">标题党笔记分享<span class="badge">14</span></a> 
+                  <a href="#" class="list-group-item"><input type="checkbox" value="">标题党笔记分享<span class="badge">14</span></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="tab-pane" id="shared">
-        <h1>我分享的笔记</h1>
-        <p></p>
-      </div>
-      <div class="tab-pane" id="stared">
-        <h1>我收藏的笔记</h1>
-        <p>list</p>
-      </div>
-      <div class="tab-pane" id="followed">
-        <h1>我关注的人</h1>
-        <p>list</p>
-      </div>
     </div>
   </div>
-
 </div>
-</div>
-<div id="footer">
-  <div class="container">
-    <p class="text-muted">@nange, @weibin, 代码如诗</p>
-  </div>
-</div>
-<script type="text/javascript">
-  jQuery(document).ready(function ($) {
-    $('#tabs').tab();
-  });
-</script> 
-
-</body>
-</html>
